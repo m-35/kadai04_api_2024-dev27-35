@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps URL QR Code Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+<header>
+ <div id="coconavi">
+    <img src="img/headercoco.png" alt="">
+    <h2>Google Maps URL QR Code Generator</h2>
+ </div>
+</header>
+
+<div class="container">
+    <div class="input-group">
+        <input type="text" id="urlInput" placeholder="Enter the Google Maps URL">
+        <button id="generateQR">generateQR</button>
+        <button id="saveQR" style="display:none;">save</button>
+        <button id="deleteQR" style="display:none;">delete</button>
+    </div>
+    <div id="qrCode"  style="position: relative; display: inline-block;">
+        <!-- QRコード画像 -->
+        <img id="qrCodeImage" src="" style="display: block;">
+    </div>
+</div>
+
+<script>
+    document.getElementById('generateQR').addEventListener('click', function() {
+        var url = document.getElementById('urlInput').value;
+        if (url) {
+            var qrCodeContainer = document.getElementById('qrCode');
+            qrCodeContainer.innerHTML = ''; // Clear the previous QR code
+            var img = document.createElement('img');
+            qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + encodeURIComponent(url);
+            qrCodeContainer.appendChild(qrimg);
+        // // ロゴ画像を生成
+         var logoImg = document.createElement('img');
+                 logoImg.src = 'img/COCO.png';
+                 logoImg.style = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px;';
+        qrCodeContainer.appendChild(logoImg);
+            // Show save and delete buttons
+            document.getElementById('saveQR').style.display = 'inline';
+            document.getElementById('deleteQR').style.display = 'inline';
+        }
+    });
+
+    document.getElementById('saveQR').addEventListener('click', function() {
+        var qrCodeImage = document.querySelector('#qrCode img');
+        var link = document.createElement('a');
+        link.href = qrCodeImage.src;
+        link.download = 'qr-code.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+
+    document.getElementById('deleteQR').addEventListener('click', function() {
+        var qrCodeContainer = document.getElementById('qrCode');
+        qrCodeContainer.innerHTML = ''; // Clear the QR code
+        document.getElementById('urlInput').value = ''; // Clear the input field
+        document.getElementById('saveQR').style.display = 'none';
+        document.getElementById('deleteQR').style.display = 'none';
+    });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

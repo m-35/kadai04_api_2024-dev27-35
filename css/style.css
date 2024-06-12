@@ -1,0 +1,158 @@
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+  /* その他のスタイル */
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /*  */
+    background-color: #fff3e0; /* 和風の背景色 */
+    background-image: 
+      radial-gradient(circle, transparent 20%, #f2ecec 20%, #d4d0d0 40%, transparent 40%),
+      radial-gradient(circle, transparent 20%, #d9d4d4 20%, #f6e1f2 40%, transparent 40%);
+    background-size: 50px 50px; /* 七宝模様のサイズ */
+    background-position: 0 0, 25px 25px;
+  }
+
+header {
+  display: flex;
+  padding-top: 50px;
+  margin-top: 50px;
+
+  align-items: center; /* 中央揃えにする場合 */
+  justify-content: flex-start; 
+  /* 横方向 */
+}
+
+#coconavi {
+  display: flex; /* フレックスコンテナとして設定 */
+  align-items: center; /* 子要素を縦方向に中央揃えに */
+  justify-content: space-evenly; 
+  flex:1; /* 必要に応じて調整 */
+  padding-top: 100px;
+  width: 800px;
+  padding-left: 350px;
+}
+
+#coconavi img {
+  margin-left: 10px;
+  width: 100px; /* 画像のサイズを指定 */
+  height: 100px; /* 画像の高さを自動調整 */
+  border: black solid;
+  border-radius: 30%;
+}
+
+#coconavi h2 {
+  margin: auto 0; /* 縦方向に自動調整 */
+  width: 500px; /* 幅を指定 */
+  height: 60px; /* 高さを指定 */
+  background-color: black; /* 明るい黄色の背景 */
+  color: #FFFFFF; /* 白色のテキスト */
+  font-size: 25px; /* フォントサイズを大きく */
+  font-weight: bold; /* 太字 */
+  text-align: center; /* 中央揃え */
+  padding: 10px; /* 内側の余白を増やす */
+  border-radius: 10px; /* 角丸のデザイン */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 影をつける */
+  display: flex; /* フレックスアイテムとして設定 */
+  align-items: center; /* 縦方向に中央揃えに */
+  justify-content: center; /* 横方向に中央揃えに */
+}
+
+
+/* QRコード */
+
+#qrCode {
+  margin-top: 15px;
+}
+
+.container {
+  text-align: center;
+}
+
+.input-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#qrCode img:hover {
+  opacity: 0.8; /* ホバー時の透明度を下げる */
+  cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+#qrCode img {
+  border-radius: 8px; /* 角の丸み */
+  box-shadow: 0 0 10px rgba(12, 12, 12, 0.25); /* シャドウエフェクト */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#qrCode img {
+  animation: fadeIn 1s ease-in-out; /* フェードインアニメーション */
+}
+
+#qrLogo {
+  z-index: 2; /* ロゴ画像を前面に表示 */
+}
+
+#qrCodeImage {
+  z-index: 1; /* QRコード画像を背面に表示 */
+}
+
+#urlInput{
+  width:300px;
+  height:30px;
+}
+/*  */
+#generateQR {
+  background-color: #FF4081; /* 明るいピンク色 */
+  color: white; /* 文字色は白 */
+  padding: 10px 20px; /* 上下10px、左右20pxのパディング */
+  border: none; /* 枠線なし */
+  border-radius: 25px; /* 角を丸くする */
+  font-size: 20px; /* 文字サイズ */
+  font-weight: bold; /* 文字を太くする */
+  cursor: pointer; /* カーソルを指にする */
+  transition: transform 0.3s; /* アニメーションの速度 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影をつける */
+}
+
+
+#saveQR {
+  background-color: #FF4081; /* 明るいピンク色 */
+  color: white; /* 文字色は白 */
+  padding: 10px 20px; /* 上下10px、左右20pxのパディング */
+  border: none; /* 枠線なし */
+  border-radius: 25px; /* 角を丸くする */
+  font-size: 16px; /* 文字サイズ */
+  font-weight: bold; /* 文字を太くする */
+  cursor: pointer; /* カーソルを指にする */
+  transition: transform 0.3s; /* アニメーションの速度 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影をつける */
+}
+
+#deleteQR {
+  background-color: #FF4081; /* 明るいピンク色 */
+  color: white; /* 文字色は白 */
+  padding: 10px 20px; /* 上下10px、左右20pxのパディング */
+  border: none; /* 枠線なし */
+  border-radius: 25px; /* 角を丸くする */
+  font-size: 16px; /* 文字サイズ */
+  font-weight: bold; /* 文字を太くする */
+  cursor: pointer; /* カーソルを指にする */
+  transition: transform 0.3s; /* アニメーションの速度 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 影をつける */
+}
+
+/*  */
+.input-group:hover {
+  transform: scale(1.05); /* ホバー時に少し大きくする */
+}
